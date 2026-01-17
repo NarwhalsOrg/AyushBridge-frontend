@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { FiEye, FiEyeOff, FiRefreshCw } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
-import "./PatientLogin.css";
+import { Link } from "react-router-dom";
+import "./DoctorLogin.css";
 
-const PatientLogin = () => {
-  const navigate = useNavigate();
-
+const DoctorLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [captcha, setCaptcha] = useState("");
 
-  const [abhaId, setAbhaId] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [captchaInput, setCaptchaInput] = useState("");
 
@@ -26,57 +24,34 @@ const PatientLogin = () => {
     generateCaptcha();
   }, []);
 
-  const handleLogin = () => {
-    if (!abhaId || !password || !captchaInput) {
-      alert("Please fill all fields");
-      return;
-    }
+  const handleLogin = (e) => {
+    e.preventDefault();
 
     if (captchaInput !== captcha) {
-      alert("Captcha does not match");
+      alert("Invalid captcha");
       generateCaptcha();
+      setCaptchaInput("");
       return;
     }
 
-    const storedPatient = JSON.parse(localStorage.getItem("patientData"));
-
-    if (!storedPatient) {
-      alert("No registered patient found. Please register first.");
-      return;
-    }
-
-    if (
-      storedPatient.healthId === abhaId &&
-      storedPatient.password === password
-    ) {
-      navigate("/patient/portal", {
-        state: {
-          name: storedPatient.name,
-          age: storedPatient.age,
-          healthId: storedPatient.healthId,
-          blood: storedPatient.blood,
-          gender: storedPatient.gender,
-          address: storedPatient.address,
-          image: "https://via.placeholder.com/150",
-        },
-      });
-    } else {
-      alert("Invalid ABHA ID or Password");
-    }
+    // TODO: API call here
+    console.log("Doctor Login:", { username, password });
   };
 
   return (
     <div className="login-page">
-      {/* CONTENT */}
-      <div className="login-content">
-        <div className="login-container">
-          <h2>Log In to your account</h2>
+      <div className="login_nav"></div>
 
+      <div className="login-container">
+        <h2>Log In to your account</h2>
+
+        <form onSubmit={handleLogin}>
           <input
             type="text"
-            placeholder="ABHA Id"
-            value={abhaId}
-            onChange={(e) => setAbhaId(e.target.value)}
+            placeholder="Username"
+            value={username}
+            required
+            onChange={(e) => setUsername(e.target.value)}
           />
 
           <div className="password-wrapper">
@@ -84,6 +59,7 @@ const PatientLogin = () => {
               type={showPassword ? "text" : "password"}
               placeholder="Password"
               value={password}
+              required
               onChange={(e) => setPassword(e.target.value)}
             />
             <span
@@ -95,7 +71,7 @@ const PatientLogin = () => {
           </div>
 
           <div className="forgot">
-            <a href="#">forgot password ?</a>
+            <Link to="/doctor/forgot-password">forgot password ?</Link>
           </div>
 
           <div className="captcha-row">
@@ -103,6 +79,7 @@ const PatientLogin = () => {
               type="text"
               placeholder="Enter the captcha"
               value={captchaInput}
+              required
               onChange={(e) => setCaptchaInput(e.target.value)}
             />
             <div className="captcha-box">{captcha}</div>
@@ -113,27 +90,27 @@ const PatientLogin = () => {
             <span> Reload</span>
           </div>
 
-          <button className="login-btn" onClick={handleLogin}>
+          <button type="submit" className="login-btn">
             Log In With Password
           </button>
+        </form>
 
-          <p className="register-text">
-            Not registered with ABHA account?{" "}
-            <span
-              style={{ color: "#3f6fa9", cursor: "pointer" }}
-              onClick={() => navigate("/patient/register")}
-            >
-              Register Now
-            </span>
-          </p>
-        </div>
+        <p className="register-text">
+          Not registered with ABHA account?{" "}
+          <a
+            href="https://abha.abdm.gov.in/abha/v3/register"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Register Now
+          </a>
+        </p>
       </div>
 
-      {/* FOOTER */}
       <div className="login-footer">
         <p>
-          © Content developed as part of{" "}
-          <span>Code Kalari Hackathon</span> project.
+          © Content developed as part of <span>Code Kalari Hackathon</span>{" "}
+          project.
         </p>
         <p>
           This platform is conceptualized and maintained by{" "}
@@ -151,4 +128,4 @@ const PatientLogin = () => {
   );
 };
 
-export default PatientLogin;
+export default DoctorLogin;

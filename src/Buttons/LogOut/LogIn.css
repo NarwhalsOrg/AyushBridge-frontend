@@ -11,7 +11,6 @@
     cursor: pointer;
     font-size: 18px;
     font-weight: 500;
-    color: white;
   }
   .login-btn:hover {
     border: none;
@@ -31,16 +30,17 @@
     top: 100%;               /* below login button */
     right: 0;
     margin-top: 6px;
-    background: white;
+    /* background: white; */
     color: #333;
     border-radius: 16px;
     width: 260px;
     /* box-shadow: 0 6px 16px rgba(0,0,0,0.2); */
-    z-index: 9999;           /* above navbar */
+    z-index: 9999;           
   }
   
   .dropdown-menu div {
     border: 1px solid #f36c21;
+    background-color: #fff;
     border-radius: 16px;
     padding: 14px 16px;
     cursor: pointer;
