@@ -36,7 +36,7 @@ const HomePage = () => {
               <span className="hero-content-highlight"> clinical coding</span>, enhance 
               <span className="hero-content-highlight"> disease classification</span>, and promote global recognition of AYUSH practices by aligning them with internationally accepted health informatics frameworks. By integrating 
               <span className="hero-content-highlight"> ICD-11 </span>
-              with 
+              with  
               <span className="hero-content-highlight"> NAMASTE </span>
               codes, we empower healthcare professionals, researchers, institutions, and policymakers to record, analyze, and exchange AYUSH-related 
               <span className="hero-content-highlight"> health data </span>
