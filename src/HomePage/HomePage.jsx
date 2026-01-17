@@ -2,7 +2,9 @@ import React from 'react'
 import './HomePage.css'
 import NavbarHome from '../NavigationBar/NavbarHome.jsx'
 import heroImg from '../assets/hero-img.png'
+import impactImage from '../assets/impact-image.png'
 import { MdCopyright } from "react-icons/md";
+import Logo from '../assets/Logo.png';
 
 
 const HomePage = () => {
@@ -71,10 +73,35 @@ const HomePage = () => {
         </div>
       </div>
 
+      {/* Impact */}
+
+      <div className='impact-section'>
+        <h2>Impact: </h2>
+        <div className='impact-card'>
+          <div className='impact-image'>
+            <img src={impactImage} alt="Impact" />
+          </div>
+          <div className='impact-content'>
+            <p>Traditional systems like Ayurveda, Yoga, Unani, Siddha, and Homeopathy play a vital role in holistic healthcare, yet often face challenges in global data representation. Ayush Bridge addresses this gap by ensuring AYUSH practices that are: 
+
+              <ul>
+                <li>Digitally standardized</li>
+                <li>Internationally compatible</li>
+                <li>Scientifically documented</li>
+                <li>Future-ready for health informatics and AI-driven </li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* FOOTER */}
       <div className='home-footer'>
-        <div className='footer-content'></div>
+        <div className='footer-content'>
+          <div className='footer-logo'>
+            <img src={Logo} alt="AyushBridge Logo" />
+          </div>
+        </div>
         <div className='footer-copyright'>
           Powered by AyushBridge <MdCopyright />
         </div>
