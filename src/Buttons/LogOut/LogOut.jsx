@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FiLogOut } from "react-icons/fi";
-import "./Logout.css";
+import "./LogOut.css";
 
 const Logout = () => {
   const navigate = useNavigate();

@@ -1,0 +1,98 @@
+.dashboard-container {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  padding: 0;
+}
+
+/* Top Orange Bar */
+.top-bar {
+  height: 40px;
+  background-color: #e67e22;
+}
+
+/* Hospital Name */
+.hospital-name {
+  color: #2e7d32;
+  margin: 20px;
+}
+
+.hospital-name span {
+  font-weight: normal;
+}
+
+/* Doctor Card */
+.doctor-card {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.doctor-info h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 40px;
+}
+
+.link {
+  color: #1e88e5;
+}
+
+/* Doctor Image */
+.doctor-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  background: #eee;
+}
+
+/* Diagnosis Section */
+.diagnosis-section {
+  margin: 20px;
+}
+
+.diagnosis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.diagnosis-header h3 {
+  color: #2e7d32;
+}
+
+/* Search Box */
+.search-box input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Table */
+.diagnosis-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.diagnosis-table th {
+  background-color: #e67e22;
+  color: #000;
+  padding: 10px;
+  border: 1px solid #999;
+}
+
+.diagnosis-table td {
+  border: 1px solid #999;
+  height: 200px;
+}
+
+.empty-row {
+  background: #e0e0e0;
+}
