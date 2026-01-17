@@ -130,10 +130,10 @@
 }
 
 /* Register */
-.register-text {
+.register-text p{
   margin-top: 16px;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 200;
 }
 
 /* Footer */

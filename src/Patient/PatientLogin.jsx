@@ -118,9 +118,9 @@ const PatientLogin = () => {
           </button>
 
           <p className="register-text">
-            Not registered with ABHA account?{" "}
+            Not registered with ABHA account?{" "} <br />
             <span
-              style={{ color: "#3f6fa9", cursor: "pointer" }}
+              style={{fontSize:18, color: "#3f6fa9", cursor: "pointer" }}
               onClick={() => navigate("/patient/register")}
             >
               Register Now

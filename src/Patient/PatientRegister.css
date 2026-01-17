@@ -76,12 +76,14 @@
 
 .otp-section {
   display: flex;
-  gap: 10px;
+  gap: 14px;
   margin-bottom: 10px;
 }
 
 .otp-section button {
-  padding: 10px;
+  padding: 7px;
+  width: 100px;
+  height: 56px;
   background: #2e7d32;
   color: white;
   border: none;
