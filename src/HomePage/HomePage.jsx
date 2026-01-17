@@ -4,7 +4,6 @@ import NavbarHome from "../NavigationBar/NavbarHome.jsx";
 import heroImg from "../assets/hero-img.png";
 import impactImage from "../assets/impact-image.png";
 import { MdCopyright } from "react-icons/md";
-import Logo from "../assets/Logo.png";
 
 const HomePage = () => {
   /* ===== INTERACTIVE HERO TEXT ===== */
@@ -18,46 +17,24 @@ const HomePage = () => {
     return () => clearInterval(interval);
   }, []);
 
-  /* ===== PARALLAX EFFECT ===== */
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroImage = document.querySelector(".hero-image img");
-      const impactImageEl = document.querySelector(".impact-image img");
-
-      if (heroImage) {
-        heroImage.style.transform = `translateY(${window.scrollY * 0.25}px)`;
-      }
-      if (impactImageEl) {
-        impactImageEl.style.transform = `translateY(${window.scrollY * 0.15}px)`;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <div className="home-page">
-      {/* NAVBAR */}
       <NavbarHome />
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <section className="hero-section">
         <div className="hero-content">
           <h1>
-            Bridging{" "}
-            <span className="animated-word">{words[wordIndex]}</span>
+            Bridging <span className="animated-word">{words[wordIndex]}</span>
           </h1>
 
           <p>
             <span className="highlight">AyushBridge</span> is a digital platform
-            that connects traditional{" "}
-            <span className="highlight">AYUSH</span> medical systems with modern
-            global <span className="highlight">healthcare</span> standards.
+            that connects traditional <span className="highlight">AYUSH</span>{" "}
+            medical systems with modern global{" "}
+            <span className="highlight">healthcare</span> standards.
             <br />
-            <br />
-            By integrating{" "}
-            <span className="highlight">ICD-11</span> with{" "}
+            By integrating <span className="highlight">ICD-11</span> with{" "}
             <span className="highlight">NAMASTE</span> codes, AyushBridge enables
             standardized, interoperable, and data-driven healthcare
             documentation.
@@ -71,7 +48,7 @@ const HomePage = () => {
 
       {/* SERVICES */}
       <section className="services">
-        <h2>What We Do</h2>
+        <h2>What We Do?</h2>
 
         <div className="services-cards">
           <div className="service-card">
@@ -98,7 +75,7 @@ const HomePage = () => {
 
       {/* IMPACT */}
       <section className="impact-section">
-        <h2>Impact</h2>
+        <h2 className="impact-title">Impact :</h2>
 
         <div className="impact-card">
           <div className="impact-image">
@@ -106,9 +83,7 @@ const HomePage = () => {
           </div>
 
           <div className="impact-content">
-            <p>
-              AyushBridge ensures AYUSH practices are:
-            </p>
+            <p>Traditional systems like Ayurveda, Yoga, Unani, Siddha, and Homeopathy play a vital role in holistic healthcare, yet often face challenges in global data representation. Ayush Bridge addresses this gap by ensuring AYUSH practices that are:</p>
             <ul>
               <li>Digitally standardized</li>
               <li>Internationally compatible</li>
@@ -121,10 +96,6 @@ const HomePage = () => {
 
       {/* FOOTER */}
       <footer className="home-footer">
-        <div className="footer-content">
-          
-        </div>
-
         <div className="footer-copy">
           Powered by AyushBridge <MdCopyright />
         </div>
